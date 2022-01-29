@@ -1,1 +1,84 @@
-/**/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  line-height: 100px;
+}
+h3 {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  line-height: 40px;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+/* Navbar */
+.header {
+  height: 70px;
+  width: 100%;
+}
+.header > div {
+  height: 100%;
+}
+.header a {
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 35px;
+  margin-right: 40px;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+}
+
+/* Main */
+.main-wrapper {
+  height: calc(100vh - 70px);
+  width: 100vw;
+}
+.main-wrapper h1 {
+  padding-left: 35px;
+}
+
+/* Orders */
+.order-wrapper {
+  height: calc(100vh - 205px);
+  width: calc(100vw - 70px);
+  margin-left: 35px;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+}
+.order:first-child {
+  margin-left: 0;
+}
+.order {
+  width: calc(25vw - 70px);
+  margin-left: 20px;
+  height: 100%;
+  background-color: green;
+  border-radius: 25px;
+}
+.order > div {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+.order > div > * {
+  display: inline-block;
+}
+.order-entries {
+  height: calc(100% - 120px) !important;
+  width: 100%;
+  display: inline-grid;
+  grid-template-rows: 40px auto;
+  grid-template-columns: 2fr 1fr 1fr;
+}
