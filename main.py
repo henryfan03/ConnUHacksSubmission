@@ -3,6 +3,7 @@ import json
 
 def main():
   getCustomerOrder()
+  getFromJSON("orderData.json")
   #getOrderById('abbigail.kautzer.764458@test.com')
 
 def getCustomerOrder():
@@ -33,6 +34,10 @@ def getStoreByID(id):
   with open('storeCache.json', 'w') as storeData:
     json.dump(response.json(), storeData)
   
+def getFromJSON(filename):
+  with open(filename) as filedata:
+    data = json.load(filedata)
+    print(data)
 
 if __name__ == "__main__":
   main()
