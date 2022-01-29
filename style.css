@@ -61,7 +61,7 @@ h3 {
   margin-left: 0;
 }
 .order {
-  width: calc(25vw - 70px);
+  width: calc(33vw);
   margin-left: 20px;
   height: 100%;
   background-color: green;

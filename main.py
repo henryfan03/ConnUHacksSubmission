@@ -33,7 +33,7 @@ def getStoreByID(id):
   response = requests.get(URL)
   with open('storeCache.json', 'w') as storeData:
     json.dump(response.json(), storeData)
-  
+
 def getFromJSON(filename):
   with open(filename) as filedata:
     data = json.load(filedata)
