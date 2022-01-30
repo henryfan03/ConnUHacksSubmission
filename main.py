@@ -3,8 +3,10 @@ import json
 
 def main():
   getCustomerOrder()
-  getFromJSON("orderData.json")
-  #getOrderById('abbigail.kautzer.764458@test.com')
+  getStores()
+  localstoredate = getFromJSON("storeCache.json")
+  getOrderByEmail('skye.roob.818768@test.com')
+  localdata = getFromJSON("orderCache.json")
 
 def getCustomerOrder():
   response = requests.get('https://sapstore.conuhacks.io/orders/')
@@ -17,7 +19,7 @@ def getOrderByEmail(email):
   with open('orderCache.json', 'w') as orderData:
     json.dump(response.json(), orderData)
 
-def getOrderByID(id):
+def getOrderById(id):
   URL = 'https://sapstore.conuhacks.io/orders/' + id
   response = requests.get(URL)
   with open('orderCache.json', 'w') as orderData:
@@ -28,16 +30,25 @@ def getStores():
   with open('storeData.json', 'w') as storeData:
     json.dump(response.json(), storeData)
 
-def getStoreByID(id):
+def getStoreById(id):
   URL = 'https://sapstore.conuhacks.io/stores/' + id
   response = requests.get(URL)
   with open('storeCache.json', 'w') as storeData:
     json.dump(response.json(), storeData)
-
+  
 def getFromJSON(filename):
   with open(filename) as filedata:
     data = json.load(filedata)
-    print(data)
+  return data
+
+def timeConversion(input):
+  if isinstance(input,str):
+    values = input.split(":")
+    adjustedtime = 60*values[0] + values[1]
+  return adjustedtime
+
+def scheduler():
+  pass
 
 if __name__ == "__main__":
   main()
