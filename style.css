@@ -61,11 +61,14 @@ h3 {
   margin-left: 0;
 }
 .order {
+  min-width: 280px;
+  max-width: 300px;
   width: calc(33vw);
   margin-left: 20px;
   height: 100%;
   background-color: green;
-  border-radius: 25px;
+  border-radius: 15px;
+  cursor: pointer;
 }
 .order > div {
   width: 100%;
@@ -79,6 +82,10 @@ h3 {
   height: calc(100% - 120px) !important;
   width: 100%;
   display: inline-grid;
-  grid-template-rows: 40px auto;
+  grid-template-rows: 40px 55px 55px 55px;
   grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+}
+.order-entries > p {
+  padding: 0 10px 0 10px;
 }
